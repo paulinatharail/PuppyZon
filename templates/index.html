@@ -59,7 +59,62 @@
             <input type="text" name="zip">
             <br>
             <br>
-            <button type="button" class="btn btn-success">Find my Pet!</button>
+            <!--<button type="button" class="btn btn-success">Find my Pet!</button>-->
+            <a class="btn btn-primary btn-small" href="/" role="button">Find my Pet!</a>
+        </div>
+        
+        <br>
+        
+        <!--Placeholder for map-->
+        <div class="container">
+          <div id="map">
+            +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+            <br>
+            +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+            <br>
+            ++++++++++++++++++IMAGINE    A   MAP   HERE++++++++++++++++++++++++++
+            <br>
+            +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+            <br>
+            +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+            <br>
+          </div>
+        </div>
+        <br>
+
+        <!--Placeholder for results-->
+        <div class="container">
+          <table border="0" class="table table-striped">
+            <thead>
+              <tr>
+                <th>Photo</th>
+                <th>Age</th>
+                <th>Primary Breed</th>
+                <th>Mixed Breed</th>
+                <th>Location</th>
+                <th>Gender</th>
+                <th>Size</th>
+                <th>Type</th>
+                <th>Listing</th>
+              </tr>
+            </thead>
+            
+            <tbody>
+              {% for item in listings_list %}
+              <tr>
+                  <td><img src="{{ item.photo1}}" alt="pet"></td> 
+                  <td>{{ item.age }} </td>
+                  <td>{{ item.primary_breed }}</td> 
+                  <td>{{ item.mixed_breed }}</td>
+                  <td>{{ item.city }}, {{ item.state }}</td> 
+                  <td>{{ item.gender }}</td>
+                  <td>{{ item.size }}</td>
+                  <td>{{ item.type }}</td>
+                  <td><a href="{{ item.url }}" target="_blank">Go to listing</a></td>
+              </tr>
+                  {% endfor %}
+            </tbody>
+          </table>
         </div>
 
 
