@@ -1,1 +1,19 @@
 /* CSS stylesheet */
+h1{
+    color:blue;
+    font-size: 28px;
+    align-items: center;
+}
+
+.jumbotron{
+    color: blue;
+}
+
+.textarea{
+  size: 10px;
+}
+
+.d-block{
+    height:320px;
+    width: 240px;
+}
