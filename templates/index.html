@@ -12,6 +12,15 @@
     <!--Bootstrap-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+    <!--Check if browser supports file uploads-->
+    <!-- <script>
+            if (window.File && window.FileReader && window.FileList && window.Blob) {
+            alert("File API supported.!");
+            } else {
+            alert("The File APIs are not fully supported in this browser.");
+            }
+            </script> -->
+
     </head>
 <body>
         <!--Jumbotron-->
@@ -22,16 +31,19 @@
                           <h1 align="center">Find a pet near you!</h1>
                           <div class="carousel-item active">
                               <img src="../static/images/cutePuppy1.jpg" class="d-block w-100" alt="...">
+                              <!-- <div class="carousel-caption">
+                                  <h1>Find a pet near you!</h1>
+                              </div> -->
                           </div>
                           <div class="carousel-item">
-                            <img src="../static/images/Dog_2.jpg" class="d-block w-100" alt="...">
+                            <img src="../static/images/Dog3.jpg" class="d-block w-100" alt="...">
                           </div>
                           <div class="carousel-item">
                             <img src="../static/images/cat1.jpeg" class="d-block w-100" alt="...">
                           </div>
                           <div class="carousel-item">
                                 <img src="../static/images/cat2.jpeg" class="d-block w-100" alt="...">
-                              </div>
+                          </div>
                         </div>
                       </div>
         </div>
@@ -43,9 +55,9 @@
 
             <!--User input-->
             <label>Upload image of pet </label>
-            <input type="text" name="petImagesrc">
-            <button type="button" class="btn btn-primary">Browse</button>
-            <button type="button" class="btn btn-success">Upload</button>
+            <input type="file" id="file" name="files[]" />
+            <!-- <button type="button" class="btn btn-primary">Browse</button> -->
+            <!-- <button type="button" class="btn btn-success">Upload</button> -->
             <br>
             <label align="center"> OR </label>
             <br>
