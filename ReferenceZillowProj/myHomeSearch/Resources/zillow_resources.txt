@@ -1,0 +1,47 @@
+Cartographic Boundary Shapefiles - School Districts
+https://www.census.gov/did/www/schooldistricts/data/boundaries.html
+
+American Fact Finder - San Diego County School Districts (Elementary)
+Poverty and Income - General Economic Characteristics 
+https://factfinder.census.gov/faces/tableservices/jsf/pages/productview.xhtml?pid=ACS_17_5YR_DP03&src=pt
+
+American Fact Finder - San Diego County School Districts (Secondary)
+Poverty and Income - General Economic Characteristics
+https://factfinder.census.gov/faces/tableservices/jsf/pages/productview.xhtml?pid=ACS_17_5YR_DP03&src=pt 
+
+Bssic Tutorial on Searching Zillow
+https://github.com/seme0021/python-zillow
+
+Here is some basic python code to query the zillow api using the python-zillow library.
+
+Note: I suggest keeping your key stored in a ./bin/config/zillow_key.conf file
+
+Initialize the API
+import zillow
+
+with open("./bin/config/zillow_key.conf", 'r') as f:
+    key = f.readline().replace("\n", "")
+
+api = zillow.ValuationApi()
+Find a place given an address
+address = "3400 Pacific Ave., Marina Del Rey, CA"
+postal_code = "90292"
+
+data = api.GetSearchResults(key, address, postal_code)
+Find place using a zillow place id
+zpid="2100641621"
+detail_data = api.GetZEstimate(key, zpid)
+Find comparables
+zpid="2100641621"
+detail_data = api.GetComps(key, zpid)
+Get Deep Search Results
+address = "3400 Pacific Ave., Marina Del Rey, CA"
+postal_code = "90292"
+
+data = api.GetDeepSearchResults(key, address, postal_code)
+Get Deep Comps
+zws_id = "<your key>"
+zpid = 2100641621
+count=10
+
+data = data = api.GetDeepComps(zws_id, zpid, count)

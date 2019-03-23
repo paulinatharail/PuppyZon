@@ -1,0 +1,27 @@
+var positions = [
+{"Name":"Canyon Crest Academy","Ranking":1,"Address":"5951 Village Center Loop Rd.San Diego, CA 92130","zipcode":"92130","median":896100,"latitude":32.944802,"longitude":-117.199324},
+{"Name":"Torrey Pines High School","Ranking":2,"Address":"3710 Del Mar Heights Rd.San Diego, CA 92130","zipcode":"92130","median":896100,"latitude":32.944802,"longitude":-117.199324},
+{"Name":"Westview High School","Ranking":3,"Address":"13500 Camino Del SurSan Diego, CA 92129","zipcode":"92129","median":652300,"latitude":32.966089,"longitude":-117.127301},
+{"Name":"Del Norte High School","Ranking":4,"Address":"16601 Nighthawk Ln.San Diego, CA 92127","zipcode":"92127","median":683300,"latitude":33.022206,"longitude":-117.126479},
+{"Name":"Coronado High School","Ranking":5,"Address":"650 D Ave.Coronado, CA 92118","zipcode":"92118","median":1424100,"latitude":32.645759,"longitude":-117.160716},
+{"Name":"San Dieguito High Academy","Ranking":6,"Address":"800 Santa Fe Dr.Encinitas, CA 92024","zipcode":"92024","median":803000,"latitude":33.050487,"longitude":-117.251443},
+{"Name":"Grossmont Middle College High School","Ranking":7,"Address":"8800 Grossmont College Dr.El Cajon, CA 92020","zipcode":"92020","median":416600,"latitude":32.793893,"longitude":-116.967205},
+{"Name":"Sage Creek High School","Ranking":8,"Address":"3900 Cannon Rd.Carlsbad, CA 92010","zipcode":"92010","median":560600,"latitude":33.155305,"longitude":-117.279802},
+{"Name":"Rancho Bernardo High School","Ranking":9,"Address":"13010 Paseo LucidoSan Diego, CA 92128","zipcode":"92128","median":526900,"latitude":32.995363,"longitude":-117.073767},
+{"Name":"Preuss School UCSD","Ranking":10,"Address":"9500 Gilman Dr.La Jolla, CA 92093","zipcode":"92093","median":0,"latitude":32.87363,"longitude":-117.238295},
+{"Name":"Mt. Carmel High School","Ranking":11,"Address":"9550 Carmel Mountain Rd.San Diego, CA 92129","zipcode":"92129","median":652300,"latitude":32.966089,"longitude":-117.127301},
+{"Name":"Mt. Everest Academy","Ranking":12,"Address":"4350 Mt. Everest Blvd.San Diego, CA 92117","zipcode":"92117","median":513200,"latitude":32.818462,"longitude":-117.198482},
+{"Name":"Mission Vista High School","Ranking":13,"Address":"1306 Melrose DriveOceanside, CA 92057","zipcode":"92057","median":382000,"latitude":33.254323,"longitude":-117.288128},
+{"Name":"La Costa Canyon High School","Ranking":14,"Address":"1 Maverick WayCarlsbad, CA 92009","zipcode":"92009","median":736500,"latitude":33.095774,"longitude":-117.23831},
+{"Name":"Classical Academy High School","Ranking":15,"Address":"207 East Pennsylvania AvenueEscondido, CA 92025","zipcode":"92025","median":434900,"latitude":33.089586,"longitude":-117.011735},
+{"Name":"Scripps Ranch High School","Ranking":16,"Address":"10410 Treena St.San Diego, CA 92131","zipcode":"92131","median":671500,"latitude":32.894669,"longitude":-117.049687},
+{"Name":"Escondido Charter High School","Ranking":17,"Address":"1868 E. Valley Pkwy.Escondido, CA 92027","zipcode":"92027","median":367900,"latitude":33.133646,"longitude":-116.97962},
+{"Name":"Poway High School","Ranking":18,"Address":"15500 Espola Rd.Poway, CA 92064","zipcode":"92064","median":606400,"latitude":32.994891,"longitude":-117.018823},
+{"Name":"Helix High School","Ranking":19,"Address":"7323 Univ Ave.La Mesa, CA 91941","zipcode":"91941","median":514100,"latitude":32.75942,"longitude":-116.997076},{
+"Name":"Olympian High School","Ranking":20,"Address":"1925 Magdalena Ave.Chula Vista, CA 91913","zipcode":"91913","median":457300,"latitude":32.625569,"longitude":-116.976102},
+{"Name":"University City High School","Ranking":21,"Address":"6949 Genesee Ave.San Diego, CA 92122","zipcode":"92122","median":589500,"latitude":32.861931,"longitude":-117.17256},
+{"Name":"San Marcos High School","Ranking":22,"Address":"1615 San Marcos Blvd.San Marcos, CA 92078","zipcode":"92078","median":502000,"latitude":33.121434,"longitude":-117.177444},
+{"Name":"La Jolla High School","Ranking":23,"Address":"750 Nautilus St.La Jolla, CA 92037","zipcode":"92037","median":1282800,"latitude":32.870045,"longitude":-117.249522},
+{"Name":"River Valley Charter School","Ranking":24,"Address":"9707 1\/2 Marilla Dr.Lakeside, CA 92040","zipcode":"92040","median":408900,"latitude":32.897702,"longitude":-116.885209},
+{"Name":"Eastlake High School","Ranking":25,"Address":"1120 E.lake Pkwy.Chula Vista, CA 91915","zipcode":"91915","median":453700,"latitude":32.620222,"longitude":-116.948912}
+];

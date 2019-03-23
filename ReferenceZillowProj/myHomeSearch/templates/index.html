@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>myHomeSearch</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/style.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+    integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+    crossorigin="" />
+
+  <!-- Leaflet JavaScript -->
+  <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+    integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+    crossorigin=""></script>
+
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html">My Home Search
+            <!--<img class="nav-ufo" src="static/images/Zillowlogo_200x50.gif">-->
+          </a>
+        </div>
+      </div>
+    </nav>
+    <div class="hero text-center">
+      <h1>My Home Search</h1>
+      <p>Find Your Dream Home</p>
+    </div>
+    <div class="container">
+      <div class="row margin-top-50">
+        <div class="col-md-2">
+          <aside class="filters">
+            <div class="panel panel-default">
+              <div class="panel-heading">Filter Search</div>
+              <div class="panel-body">
+                <form>
+                  <div class="form-group">
+                    <ul class="list-group" id="filters">
+
+                      <!-- Grade Level Form Control-->
+                      <li class="filter list-group-item">
+                        <h5>SELECT</h5>
+                        <label for="selSchools">School</label>
+                        <select id="selSchools" onchange="optionChanged(this.value)">
+                        </select>
+                        <!-- <label for="grade_level">Enter a Grade Level</label>
+                        <input class="form-control" id="gradeLevel" type="text" placeholder="High School"> -->
+                      </li>
+
+                      <!-- Zipcode Form Control-->
+
+                      <li class="filter list-group-item">
+                        <div class="form-group">
+                          <label for="selBedrooms">Bedrooms</label>
+                          <select class="form-control" id="selBedrooms">
+                            <option value="Any">Any</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6+">6+</option>
+                          </select>
+                        </div>
+                      </li>
+
+                      <li class="filter list-group-item">
+                        <div class="form-group">
+                          <label for="selBathrooms">Bathrooms</label>
+                          <select class="form-control" id="selBathrooms">
+                            <option value="Any">Any</option>
+                            <option value="1">1</option>
+                            <option value="1.5">1.5</option>
+                            <option value="2">2</option>
+                            <option value="2.5">2.5</option>
+                            <option value="3">3</option>
+                            <option value="3.5">3.5</option>
+                            <option value="4">4</option>
+                            <option value="4.5">4.5</option>
+                            <option value="5+">5+</option>
+                          </select>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <button id="filter-btn" type="submit" class="btn btn-default">Filter Table</button>
+                </form>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="col-md-10">
+          <div id="table-area" class="">
+            <table id="listings" class="table table-striped">
+              <thead>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+
+
+
+      <!--Map here-->
+      <div class="row">
+        <div class="col-xs-12  col-md-9">
+          <div id="map-id">
+          </div>
+        </div>
+      </div>
+
+      <!--Affordability Table-->
+      <div class="row">
+        <div class="col-xs-12  col-md-9">
+          <div id="table-affordability" class="" style="margin-top:20px;">
+            <table id="affordability" class="table table-striped">
+              <thead>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <!--Chart here-->
+      <div class="row">
+        <div class="col-xs-12  col-md-9">
+          <div id="bubble">
+            <!-- We append our chart here. -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+    <footer class="footer">
+      <img src="static/images/Zillowlogo_200x50.gif">
+      <!--<span class="bottom"></span>-->
+    </footer>
+
+  </div>
+  <!--wrapper-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script type="text/javascript" src="static/js/config.js"></script>
+  <script src="static/js/app.js"></script>
+  <script src="static/js/appchart.js"></script>
+  <script type="text/javascript" src="static/js/data.js"></script>
+  <script type="text/javascript" src="static/js/logic.js"></script>
+</body>
+
+</html>
