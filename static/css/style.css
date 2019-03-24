@@ -4,10 +4,10 @@ h1{
     font-size: 28px;
     align-items: center;
 }
-
+/* 
 .jumbotron{
     color: blue;
-}
+} */
 
 .textarea{
   size: 10px;
@@ -20,4 +20,10 @@ h1{
 
 #file{
     color:blue;
+}
+
+#labelOR{
+    color:red;
+    font-weight: bold;
+    font-size: 18px;
 }
