@@ -20,13 +20,35 @@ h1{
 
 #file{
     color:blue;
-<<<<<<< Updated upstream
 }
 
 #labelOR{
     color:red;
     font-weight: bold;
     font-size: 18px;
-=======
->>>>>>> Stashed changes
+    padding-left: 200px;
+}
+
+#custom-text{
+    padding-left: 10px;
+    color: grey;
+}
+
+.btn-primary{
+    padding-left: 20px;
+}
+
+#uploadedImg{
+    border: 5px;
+    border-color: black;
+    box-shadow: 10px;
+    height: 80px;
+    width: 80px;
+    display: none;
+}
+
+#inputText {
+    padding-left: 10%;
+    /* padding:15px; */
+    padding-right: 10%;
 }

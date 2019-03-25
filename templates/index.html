@@ -54,24 +54,36 @@
     <!--Container-->
     <div class="container">
 
+        <div class="row">
+            <!--User input-->
+            <div id="fileUpload" class="col-md-6">
+                <br><br>
 
-        <!--User input-->
-        <div id="fileUpload">
-            <br><br> 
-            <label>Upload image of pet </label>
+                <label>Upload image of pet </label>
 
-            <input type="file" id="file" name="name" style="display:none" />
-            <button type="button" id="browse" class="btn btn-primary">Browse</button>
-            <span id="custom-text">No file chosen</span>
+                    <input type="file" id="file" name="name" style="display:none" />
+                    <button type="button" id="browse" class="btn btn-primary">Browse</button>
+                    <span id="custom-text">No file chosen</span>
+
+            </div>
+            <div class="col-md-6">
+                    <br><br>
+                <!--uploaded image displayed here-->
+                <img id="uploadedImg"  />
+            </div>
         </div>
         <!-- <button type="button" class="btn btn-success">Upload</button> -->
         <br><br>
-        <label id="labelOR" align="center"> OR </label>
+        <div class="row">
+            <label id="labelOR" align="center"> OR </label>
+        </div>
         <br><br>
-        <label>Enter Animal Type</label>
-        <input type="text" id="animalType" name="animalType">
-        <label>Enter Breed (Optional)</label>
-        <input type="text" id="BreedName" name="BreedName"><br>
+        <div class="row">
+            <label id="labelText">Enter Animal Type</label>
+            <input  id="inputText" type="text" id="animalType" name="animalType">
+            <label id="labelText">Enter Breed (Optional)</label>
+            <input  id="inputText" type="text" id="BreedName" name="BreedName"><br>
+        </div>
         <br>
         <br>
         <label>Zipcode</label>

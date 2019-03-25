@@ -39,6 +39,29 @@ browseButton.addEventListener("click", function(){
 fileDialogBox.addEventListener("change", function(){
     if(fileDialogBox.value){
         spanText.innerHTML = fileDialogBox.value.match(/[\/\\]([\w\d\s\.\-(\)]+)$/)[1];
+     
+        if (this.files && this.files[0]){
+            var obj = new FileReader();
+            obj.onload = function(data){
+                var image = document.getElementById('uploadedImg');
+                image.src = data.target.result;
+                image.style.display =  "block";
+            }
+            obj.readAsDataURL (this.files[0]);
+        }
+     
+     
+        // var imgShow = document.getElementById('uploadedImg');
+        // // console.log("imgShow.display: "+ imgShow);
+        // imgShow.src = "../static/images/Dog3.jpg" 
+        // imgShow.display = "block";
+
+        // // if (imgShow.display === "none"){
+        // //     imgShow.display = "block";
+        // // }
+        // // else {
+        // //     imgShow.display = "none";
+        // }
     }
     else{
         spanText.innerHTML="No file chosen"
