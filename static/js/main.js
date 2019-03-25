@@ -27,34 +27,23 @@ findPetButton.on("click", function(){
 });
 
 
-//on Button click event
-var browse = d3.select('#browse');
-var fileBrowse = d3.select('#file');
-var fileUploadDIV = d3.select('#fileUpload');
+// //File Browse Button click event
+const browseButton = document.getElementById('browse');
+const fileDialogBox = document.getElementById('file');
+const spanText = document.getElementById('custom-text');
 
-browse.on("click", function(){
-    console.log("Browse button clicked");
-
-    
-
-
-
-    var fileSelector = document.createElement('input');
-    fileSelector.setAttribute('type', 'file');
-    fileSelector.setAttribute('id', 'fileSelector');
-
-    var selectDialogLink = document.createElement('a');
-    selectDialogLink.setAttribute('href', '');
-    selectDialogLink.setAttribute('id', 'fileSelector');
-
-    selectDialogLink.innerText = 'Select File';
-
-    selectDialogLink.onclick = function() {
-        fileSelector.click();
-        return false;
-    }
-
-    // document.body.appendChild(selectDialogLink);
-    fileUploadDIV.append("fileSelector");
+browseButton.addEventListener("click", function(){
+    fileDialogBox.click();
 });
+
+fileDialogBox.addEventListener("change", function(){
+    if(fileDialogBox.value){
+        spanText.innerHTML = fileDialogBox.value.match(/[\/\\]([\w\d\s\.\-(\)]+)$/)[1];
+    }
+    else{
+        spanText.innerHTML="No file chosen"
+    }
+    
+});
+
 
