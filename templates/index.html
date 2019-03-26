@@ -1,15 +1,169 @@
 <!--Index.html-->
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>PuppyZon</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="static/css/style.css">
-    <script src="static/js/main.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="../static/css/style.css">
+
+
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!--Check if browser supports file uploads-->
+    <!-- <script>
+            if (window.File && window.FileReader && window.FileList && window.Blob) {
+            alert("File API supported.!");
+            } else {
+            alert("The File APIs are not fully supported in this browser.");
+            }
+            </script> -->
+
+    <script src="https://d3js.org/d3.v5.min.js"></script>
 </head>
+
 <body>
-    
+
+    <!--Carousel of pet pics-->
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <h1 align="center">Find a pet near you!</h1>
+            <div class="carousel-item active">
+                <img src="../static/images/cutePuppy1.jpg" class="d-block w-100" alt="...">
+                <!-- <div class="carousel-caption">
+                                  <h1>Find a pet near you!</h1>
+                              </div> -->
+            </div>
+            <div class="carousel-item">
+                <img src="../static/images/Dog3.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="../static/images/cat1.jpeg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="../static/images/cat2.jpeg" class="d-block w-100" alt="...">
+            </div>
+        </div>
+    </div>
+
+
+    <!--Container-->
+    <div class="container">
+
+        <div class="row">
+            <!--User input-->
+            <div id="fileUpload" class="col-md-6">
+                <br><br>
+
+                <label>Upload image of pet </label>
+
+                    <input type="file" id="file" name="name" style="display:none" />
+                    <button type="button" id="browse" class="btn btn-primary">Browse</button>
+                    <span id="custom-text">No file chosen</span>
+
+            </div>
+            <div class="col-md-6">
+                    <br><br>
+                <!--uploaded image displayed here-->
+                <img id="uploadedImg"  />
+            </div>
+        </div>
+        <!-- <button type="button" class="btn btn-success">Upload</button> -->
+        <br><br>
+        <div class="row">
+            <label id="labelOR" align="center"> OR </label>
+        </div>
+        <br><br>
+        <div class="row">
+            <label id="labelText">Enter Animal Type</label>
+            <input   type="text" id="animalType" name="animalType">
+            <label id="labelText">Enter Breed (Optional)</label>
+            <input   type="text" id="BreedName" name="BreedName"><br>
+        </div>
+        <br>
+        <br>
+        <label>Zipcode</label>
+        <input type="text" id="zipcode" name="zip">
+        <br>
+        <br>
+        <!--<button type="button" class="btn btn-success">Find my Pet!</button>-->
+        <a class="btn btn-success btn-small" id="FindPet" href="/" role="button">Find my Pet!</a>
+
+
+        <br><br><br>
+
+        <!--Placeholder for map-->
+        <div id="map">
+            +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+            <br>
+            +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+            <br>
+            ++++++++++++++++++IMAGINE A MAP HERE++++++++++++++++++++++++++
+            <br>
+            +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+            <br>
+            +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+            <br>
+        </div>
+        <br><br><br>
+
+        <!--Placeholder for results-->
+        <table border="0" class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Photo</th>
+                    <th>Age</th>
+                    <th>Primary Breed</th>
+                    <th>Mixed Breed</th>
+                    <th>Location</th>
+                    <th>Gender</th>
+                    <th>Size</th>
+                    <th>Type</th>
+                    <th>Listing</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for item in listings_list %}
+                <tr>
+                    <!-- <td><img src="{{ item.photo1}}" alt="pet"></td>  -->
+                    <td>{{ item.age }} </td>
+                    <td>{{ item.primary_breed }}</td>
+                    <td>{{ item.mixed_breed }}</td>
+                    <td>{{ item.city }}, {{ item.state }}</td>
+                    <td>{{ item.gender }}</td>
+                    <td>{{ item.size }}</td>
+                    <td>{{ item.type }}</td>
+                    <td><a href="{{ item.url }}" target="_blank">Go to listing</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+
+
+    </div>
+
+
+
+    <!--JS-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
+    <script src="../static/js/main.js"></script>
+
 </body>
+
 </html>

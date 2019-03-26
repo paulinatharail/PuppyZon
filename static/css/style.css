@@ -1,1 +1,54 @@
 /* CSS stylesheet */
+h1{
+    color:blue;
+    font-size: 28px;
+    align-items: center;
+}
+/* 
+.jumbotron{
+    color: blue;
+} */
+
+.textarea{
+  size: 10px;
+}
+
+.d-block{
+    height:320px;
+    width: 240px;
+}
+
+#file{
+    color:blue;
+}
+
+#labelOR{
+    color:red;
+    font-weight: bold;
+    font-size: 18px;
+    padding-left: 200px;
+}
+
+#custom-text{
+    padding-left: 10px;
+    color: grey;
+}
+
+.btn-primary{
+    padding-left: 20px;
+}
+
+#uploadedImg{
+    border: 5px;
+    border-color: black;
+    box-shadow: 10px;
+    height: 80px;
+    width: 80px;
+    display: none;
+}
+/* 
+#animalType, #BreedName {
+    padding-left: 10%;
+    padding:15px;
+    padding-right: 10%;
+} */
