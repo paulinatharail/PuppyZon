@@ -46,9 +46,9 @@ h1{
     width: 80px;
     display: none;
 }
-
-#inputText {
+/* 
+#animalType, #BreedName {
     padding-left: 10%;
-    /* padding:15px; */
+    padding:15px;
     padding-right: 10%;
-}
+} */

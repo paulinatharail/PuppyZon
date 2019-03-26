@@ -1,7 +1,6 @@
 
 //javascript
-
-var findPetButton = d3.select('#FindPet');
+const findPetButton = d3.select('#FindPet');  
 
 
 //on Button click event
@@ -11,8 +10,10 @@ findPetButton.on("click", function(){
     d3.event.preventDefault();
 
     //Get the user input data
-    var animalType = d3.select('#animalType').property("value");
-   
+    //var animalType = d3.select('#animalType').property("value");
+   var animalType = document.getElementById('animalType').value;
+
+
     //BreedName
     var breedName = d3.select('#BreedName').property("value");
     //zipcode
