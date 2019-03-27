@@ -10,8 +10,7 @@ findPetButton.on("click", function(){
     d3.event.preventDefault();
 
     //Get the user input data
-    //var animalType = d3.select('#animalType').property("value");
-   var animalType = document.getElementById('animalType').value;
+    var animalType = d3.select('#animalType').property("value");
 
 
     //BreedName

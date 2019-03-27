@@ -31,7 +31,6 @@
     <!--Carousel of pet pics-->
     <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
-            <h1 align="center">Find a pet near you!</h1>
             <div class="carousel-item active">
                 <img src="../static/images/cutePuppy1.jpg" class="d-block w-100" alt="...">
                 <!-- <div class="carousel-caption">
@@ -49,6 +48,8 @@
             </div>
         </div>
     </div>
+    <h1 align="center">Find a pet near you!</h1>
+
 
 
     <!--Container-->
@@ -61,15 +62,15 @@
 
                 <label>Upload image of pet </label>
 
-                    <input type="file" id="file" name="name" style="display:none" />
-                    <button type="button" id="browse" class="btn btn-primary">Browse</button>
-                    <span id="custom-text">No file chosen</span>
+                <input type="file" id="file" name="name" style="display:none" />
+                <button type="button" id="browse" class="btn btn-primary">Browse</button>
+                <span id="custom-text">No file chosen</span>
 
             </div>
             <div class="col-md-6">
-                    <br><br>
+                <br><br>
                 <!--uploaded image displayed here-->
-                <img id="uploadedImg"  />
+                <img id="uploadedImg" />
             </div>
         </div>
         <!-- <button type="button" class="btn btn-success">Upload</button> -->
@@ -79,10 +80,39 @@
         </div>
         <br><br>
         <div class="row">
-            <label id="labelText">Enter Animal Type</label>
-            <input   type="text" id="animalType" name="animalType">
-            <label id="labelText">Enter Breed (Optional)</label>
-            <input   type="text" id="BreedName" name="BreedName"><br>
+            <div class="col-md-6">
+                    <label id="labelText">Enter Animal Type</label>
+                    <input type="text" id="animalType" name="animalType">
+                <!-- <div class="dropdown">
+                        
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="animalTypeDropdown"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        (Choose one)  
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">Dog</a>
+                        <a class="dropdown-item" href="#">Cat</a>
+                    </div>
+                </div> -->
+            </div>
+            <div class="col-md-6">
+                    <label id="labelText">Enter Breed (Optional)</label>
+                    <input type="text" id="BreedName" name="BreedName"><br>
+                <!-- <div class="dropdown">
+                        
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="breedDropdown"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        (Choose one)
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">Pug</a>
+                        <a class="dropdown-item" href="#">BullDog</a>
+                    </div>
+                </div> -->
+            </div>
+
+
+
         </div>
         <br>
         <br>
@@ -97,7 +127,7 @@
         <br><br><br>
 
         <!--Placeholder for map-->
-        <div id="map">
+        <!-- <div id="map">
             +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
             <br>
             +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -109,7 +139,7 @@
             +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
             <br>
         </div>
-        <br><br><br>
+        <br><br><br> -->
 
         <!--Placeholder for results-->
         <table border="0" class="table table-striped">
@@ -130,7 +160,7 @@
             <tbody>
                 {% for item in listings_list %}
                 <tr>
-                    <!-- <td><img src="{{ item.photo1}}" alt="pet"></td>  -->
+                    <td><img alt="pet"></td> 
                     <td>{{ item.age }} </td>
                     <td>{{ item.primary_breed }}</td>
                     <td>{{ item.mixed_breed }}</td>

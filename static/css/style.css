@@ -46,6 +46,11 @@ h1{
     width: 80px;
     display: none;
 }
+
+.dropdown{
+    background-color: white;
+}
+
 /* 
 #animalType, #BreedName {
     padding-left: 10%;
