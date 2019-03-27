@@ -2,22 +2,23 @@
 import os
 import io
 import numpy as np
+import pandas as pd
 
-import keras
-from keras.preprocessing import image
-from keras.preprocessing.image import img_to_array
-from keras.applications.xception import (
-    Xception, preprocess_input, decode_predictions)
-from keras import backend as K
+# import keras
+# from keras.preprocessing import image
+# from keras.preprocessing.image import img_to_array
+# from keras.applications.xception import (
+#     Xception, preprocess_input, decode_predictions)
+# from keras import backend as K
 
-from flask import Flask, request, redirect, url_for, jsonify
+from flask import Flask, request, render_template, redirect, url_for, jsonify
 
-import PetFinder
+#import PetFinder
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = 'uploads'
 
-model = None
+#model = None
 
 # # Load trained model
 # def load_model():
@@ -37,16 +38,22 @@ model = None
 
 
 @app.route('/', methods=['GET', 'POST'])
-def api_call():
-    cats = PetFinder.petFinder("cat", "adoptable", 1000)
-    dogs = PetFinder.petFinder("dog", "adoptable", 1000)
-    results = pd.concat([cats, dogs], sort=None)
-    print(results)
-    results.to_csv("Resources/pets.csv")
-    
-    return render_template("index.html", mars=mars)
-
 def upload_file():
+
+    # Plan A: make the API Calls
+    # =====================================================
+
+    # cats = PetFinder.petFinder("cat", "adoptable", 1000)
+    # dogs = PetFinder.petFinder("dog", "adoptable", 1000)
+    # results = pd.concat([cats, dogs], sort=None)
+    # results.to_csv("Resources/cats_dogs.csv")
+
+
+    # Plan B: use CSV
+    #======================================================
+    results = pd.read_csv("Resources/cats_dogs.csv")
+    #print(f"cats and dogs: {results}")
+
     if request.method == 'POST':
         print(request)
 
@@ -60,36 +67,60 @@ def upload_file():
             # Save the file to the uploads folder
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             return "Image Saved!"
+    
+    return render_template("index.html")
             
             
 @app.route('/listings')
-    def listings():
-
-        image_size = (224, 224)
-        im = keras.preprocessing.image.load_img(filepath,
+def listings():
+    """
+    image_size = (224, 224)
+    im = keras.preprocessing.image.load_img(filepath,
                                                     target_size=image_size,
                                                     grayscale=False)
-        # preprocess the image and prepare it for classification
-        image = prepare_image(im)
+    # preprocess the image and prepare it for classification
+    image = prepare_image(im)
 
-        #Feed into model
-        #Model returns animal type and breed type
-        # Make API calls and store results in results   
+    #Feed into model
+    #Model returns animal type and breed type
+    # Make API calls and store results in results 
+    """ 
         
-        results = pd.read_csv("Resources/pets.csv")
+    results = pd.read_csv("Resources/cats_dogs.csv")
+    #print(results)
+
+    param = "pug" # test param
+    breed = param.title() 
+    #print(breed)
         
-        filtered_results = results.loc[results["primary breed"] == breed]
-        filtered_results.to_csv('Resources/filtered_pets.csv',header=True, index=False) 
-        columns = filtered_results.columns
+    filtered_results = results[results["primary breed"] == breed]
 
+    #print(filtered_results["primary breed"])
 
-        listings = {}
-        for col in cols:
-            listings[col] = filtered_results[col] 
+       
+    filtered_results.to_csv('Resources/filtered_results.csv', header=True, index=False) 
         
-        print(listings)
+    columns = list(filtered_results.columns)
+    #print(f"Column titles: {columns}")
+   
 
-        return jsonify(listings)
+
+    listings = {}
+    for col in columns:
+        #print(col)
+        #print(type(col))
+        #print(results[col][10])
+        
+        print(filtered_results[col][1])
+        
+        
+    #print(f"dictionary: {listings}")
+
+    return jsonify(listings)
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
 
 
 

@@ -74,12 +74,11 @@ def fetchPet(animal_type,limit,status,page):
 
 
 def petFinder(animal_type, status, limit):
-   
-   total_pages = totalPages(animal_type,status,limit)
+    total_pages = totalPages(animal_type,status,limit)
 
-   pets = []
+    pets = []
 
-   for  page in range(1,total_pages +1):
+    for  page in range(1,total_pages +1):
         petData = fetchPet(animal_type,limit,status,page)
         #print(petData)
         #append to a list from another list
@@ -135,7 +134,6 @@ def petFinder(animal_type, status, limit):
                     if 'postcode' in address:
                         pet_dict['postcode'] = row['contact']['address']['postcode']
         
-                
             pets.append(pet_dict)    
     
     pets_df = pd.DataFrame(pets)

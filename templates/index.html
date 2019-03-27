@@ -60,11 +60,17 @@
             <div id="fileUpload" class="col-md-6">
                 <br><br>
 
-                <label>Upload image of pet </label>
+                <!-- <label>Upload image of pet </label> -->
 
-                <input type="file" id="file" name="name" style="display:none" />
-                <button type="button" id="browse" class="btn btn-primary">Browse</button>
-                <span id="custom-text">No file chosen</span>
+                <h1>Upload image of pet</h1>
+                <form method=post enctype=multipart/form-data>
+                    <p><input type=file name=file>
+                       <input type=submit value=Upload>
+                </form>
+
+                    <!-- <input type="file" id="file" name="name" style="display:none" />
+                    <button type="button" id="browse" class="btn btn-primary">Browse</button>
+                    <span id="custom-text">No file chosen</span> -->
 
             </div>
             <div class="col-md-6">
