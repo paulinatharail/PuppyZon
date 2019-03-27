@@ -1,18 +1,21 @@
 <!--Index.html-->
 <!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>PuppyZon</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Data Future Home Page</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" media="screen" href="../static/css/style.css">
 
 
     <!--Bootstrap-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
 
     <!--Check if browser supports file uploads-->
     <!-- <script>
@@ -27,31 +30,94 @@
 </head>
 
 <body>
-
-    <!--Carousel of pet pics-->
-    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+<!-- NAVBAR
+    =================== -->
+    <div class="navbar-wrapper">
+        <!-- Wrap the .navbar in .container to center it within the absolutely positioned parent. -->
+        <div class="container">
+  
+          <div class="navbar navbar-inverse">
+            <div class="navbar-inner">
+              <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
+              <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="brand" href="#">Project name</a>
+              <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
+              <div class="nav-collapse collapse">
+                <ul class="nav">
+                  <li class="active"><a href="#">Home</a></li>
+                  <li><a href="#about">About</a></li>
+                  <li><a href="#contact">Contact</a></li>
+                  <!-- Read about Bootstrap dropdowns at http://twitter.github.com/bootstrap/javascript.html#dropdowns -->
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="#">Action</a></li>
+                      <li><a href="#">Another action</a></li>
+                      <li><a href="#">Something else here</a></li>
+                      <li class="divider"></li>
+                      <li class="nav-header">Nav header</li>
+                      <li><a href="#">Separated link</a></li>
+                      <li><a href="#">One more separated link</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div><!--/.nav-collapse -->
+            </div><!-- /.navbar-inner -->
+          </div><!-- /.navbar -->
+  
+        </div> <!-- /.container -->
+      </div><!-- /.navbar-wrapper -->
+  
+  
+  
+      <!-- Carousel
+      ================================================== -->
+      <div id="myCarousel" class="carousel slide">
         <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="../static/images/cutePuppy1.jpg" class="d-block w-100" alt="...">
-                <!-- <div class="carousel-caption">
-                                  <h1>Find a pet near you!</h1>
-                              </div> -->
+          <div class="item active">
+            <img src="../static/images/French_bulldog3.jpg" class="text-center" id="Frenchy">
+            <div class="container">
+              <div class="carousel-caption">
+                <h1>Example headline.</h1>
+                <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                <a class="btn btn-large btn-primary" href="#">Sign up today</a>
+              </div>
             </div>
-            <div class="carousel-item">
-                <img src="../static/images/Dog3.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="item">
+            <img src="../static/images/Ragdoll1.jpg" class="text-center" alt="" id="Rag">
+            <div class="container">
+              <div class="carousel-caption">
+                <h1>Another example headline.</h1>
+                <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                <a class="btn btn-large btn-primary" href="#">Learn more</a>
+              </div>
             </div>
-            <div class="carousel-item">
-                <img src="../static/images/cat1.jpeg" class="d-block w-100" alt="...">
+          </div>
+          <div class="item">
+            <img src="../static/images/Doberman2.jpg" class="text-center" alt="" id="Doby">
+            <div class="container">
+              <div class="carousel-caption">
+                <h1>One more for good measure.</h1>
+                <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                <a class="btn btn-large btn-primary" href="#">Browse gallery</a>
+              </div>
             </div>
-            <div class="carousel-item">
-                <img src="../static/images/cat2.jpeg" class="d-block w-100" alt="...">
-            </div>
+          </div>
         </div>
-    </div>
     <h1 align="center">Find a pet near you!</h1>
 
 
 
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
+      </div><!-- /.carousel -->
+  
+      <!-- </div>/.container -->
     <!--Container-->
     <div class="container">
 
