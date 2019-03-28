@@ -46,12 +46,12 @@ def upload_file():
     # cats = PetFinder.petFinder("cat", "adoptable", 1000)
     # dogs = PetFinder.petFinder("dog", "adoptable", 1000)
     # results = pd.concat([cats, dogs], sort=None)
-    # results.to_csv("Resources/cats_dogs.csv")
+    # results.to_csv("Resources/allpets.csv")
 
 
     # Plan B: use CSV
     #======================================================
-    results = pd.read_csv("Resources/cats_dogs.csv")
+    results = pd.read_csv("Resources/allpets.csv")
     #print(f"cats and dogs: {results}")
 
     if request.method == 'POST':
@@ -86,7 +86,7 @@ def listings():
     # Make API calls and store results in results 
     """ 
         
-    results = pd.read_csv("Resources/cats_dogs.csv")
+    results = pd.read_csv("Resources/allpets.csv")
     #print(results)
 
     param = "pug" # test param
@@ -104,16 +104,20 @@ def listings():
     #print(f"Column titles: {columns}")
 
 
-    listings = {}
-    for col in columns:
-        #print(col)
-        #print(type(col))
-        #print(results[col][10])
-        #print(filtered_results[col])
-        listings[col] = list(filtered_results[col])
+    listings = []
+    for index, row in filtered_results.iterrows():
+        dictionary = {}
+        for col in columns:
+            #print(col)
+            #print(type(col))
+            #print(results[col][10])
+            #print(filtered_results[col])
+            #print(row[col])
+            dictionary[col] = row[col]
         
-        
-    #print(f"dictionary: {listings}")
+        listings.append(dictionary)
+    
+    print(f"dictionary: {listings}")
 
     return jsonify(listings)
 
