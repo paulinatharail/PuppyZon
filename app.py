@@ -94,6 +94,7 @@ def listings():
     #print(breed)
         
     filtered_results = results[results["primary breed"] == breed]
+    filtered_results = filtered_results.fillna("")
 
     #print(filtered_results["primary breed"])
 
