@@ -102,7 +102,6 @@ def listings():
         
     columns = list(filtered_results.columns)
     #print(f"Column titles: {columns}")
-   
 
 
     listings = {}
@@ -110,8 +109,8 @@ def listings():
         #print(col)
         #print(type(col))
         #print(results[col][10])
-        
-        print(filtered_results[col][1])
+        #print(filtered_results[col])
+        listings[col] = list(filtered_results[col])
         
         
     #print(f"dictionary: {listings}")
