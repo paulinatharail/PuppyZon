@@ -1,5 +1,5 @@
 //Get data to be displayed in the table
-const url = `listings`;
+var url = 'listings?breed=' + breed;
 
 d3.json(url).then(function (data) {
  

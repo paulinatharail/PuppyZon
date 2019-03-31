@@ -1,6 +1,6 @@
 # Import Dependencies
-#import matplotlib.pyplot as plt
-# %matplotlib inline
+import matplotlib.pyplot as plt
+#%matplotlib inline
 
 import os
 import numpy as np
@@ -14,23 +14,18 @@ from keras.applications.vgg19 import (
     decode_predictions
 )
 
-# Define default image size for VGG19
+from keras import backend as K
 
 
-def model():
+# Refactor above steps into reusable function
+def predict(image_path):
+    """Use VGG19 to label image"""
     # Load the VGG19 model
     # https://keras.io/applications/#VGG19
     model = VGG19(include_top=True, weights='imagenet')
 
-    return model
-
-
-def predict(image_path):
-
+    # Define default image size for VGG19
     image_size = (224, 224)
-    model = model()
-
-    """Use VGG19 to label image"""
     img = image.load_img(image_path, target_size=image_size)
     x = image.img_to_array(img)
     x = np.expand_dims(x, axis=0)
@@ -40,12 +35,12 @@ def predict(image_path):
     predicted = predictions[0][1]
     print('Predicted:', predicted)
     predicted_clean = predicted.replace('_',' ')
+    #https://github.com/RasaHQ/rasa_nlu/issues/3102
+    K.clear_session()
+    if (predicted_clean == 'Siamese cat'):
+        predicted_clean = 'Siamese'
     return predicted_clean
 
-
-   
-
-
-
-
+# image_path = os.path.join("Images","NotDog.jpg")
+# predict(image_path)
 

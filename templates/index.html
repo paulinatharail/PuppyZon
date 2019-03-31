@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Data Future Home Page</title>
+    <title>PuppyZon</title>
     
     <!--Bootstrap-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -212,6 +212,7 @@
 
         <br><br><br>
 
+        <h2>Pets Found of Type {{ breed }}</h2>
 
         <div id="map"></div>
 
@@ -286,8 +287,13 @@
         crossorigin="anonymous"></script>
 
     <!--- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script> -->
-
-
+    
+    <!--embed the breed found by the image upload ML routine app.upload_file-->
+    <!--https://www.tutorialspoint.com/flask/flask_templates.htm-->
+    <script type='text/javascript'>
+    var breed = "{{ breed }}";
+    </script>
+    
     <!--Table data display-->
     <!-- <script src="{{ url_for('static', filename='js/sample.js') }}"></script> -->
     <script src="{{ url_for('static', filename='js/ResultsListingsTable.js') }}"></script>
