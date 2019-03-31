@@ -35,9 +35,9 @@ def upload_file():
             file.save(filepath)
             breed = predict(filepath)
             #render the homepage but with breed ifo incuded
-            return render_template("index2.html", breed=breed)
+            return render_template("index.html", breed=breed)
     
-    return render_template("index2.html")
+    return render_template("index.html")
             
             
 @app.route('/listings')
