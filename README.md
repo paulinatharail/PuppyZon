@@ -1,5 +1,5 @@
 # PuppyZon
-
+![Webpage Image](/images/homepage.png)
 
 ``Ever look at a puppy and think, “damn, I want a dog like that”? Well, we have a tool for you! Our app can help you find a similar dog in a nearby shelter or non-profit. Go find yourself a new furry family member today!``
 
