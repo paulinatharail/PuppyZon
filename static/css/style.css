@@ -1,7 +1,27 @@
 /* CSS stylesheet */
 h1 {
+    font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
     color:blue;
     font-size: 28px;
+    /* align-items: center; */
+    text-align: center;
+}
+
+#homepage_title{
+        font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+        font-weight: 700; 
+        line-height: 50.6px;
+        word-spacing: 2px;
+        color:lightgreen;
+        font-size:42px;
+        text-align: center;
+}
+
+#upload_header{
+    font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    color:black;
+    font-size: 28px;
+    font-weight:500;
     /* align-items: center; */
     text-align: center;
 }
@@ -51,6 +71,61 @@ h1 {
 .dropdown{
     background-color: white;
 }
+
+.column {
+    float: left;
+    width: 25%;
+    padding: 0 10px;
+  }
+  
+  /* Remove extra left and right margins, due to padding */
+  #title_row {margin: 0 -600px;}
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Responsive columns */
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+      display: block;
+      margin-bottom: 20px;
+    }
+  }
+  
+  /* Style the counter cards */
+  .card1 {
+    box-shadow: 0 8px 6px 0 rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    text-align: center;
+    background-color: black;
+  }
+
+  .card2 {
+    box-shadow: 0 8px 6px 0 rgba(0, 0, 0, 0.6);
+    padding: 16px;
+    text-align: center;
+    background-color: lightyellow;
+  }
+
+  .card3 {
+    box-shadow: 0 8px 6px 0 rgba(0, 0, 0, 0.6);
+    padding: 40px;
+    text-align: center;
+    background-color: lightyellow;
+  }
+
+  #rcorners1 {
+    border-radius: 25px;
+    background: #73AD21;
+    padding: 20px; 
+    width: 200px;
+    height: 150px;  
+  }
 
 /* 
 #animalType, #BreedName {
@@ -119,7 +194,7 @@ body {
 
   /* Carousel base class */
   .carousel {
-    margin-bottom: 60px;
+    margin-bottom: -48px;
   }
 
   .carousel .container {

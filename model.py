@@ -7,6 +7,7 @@ import numpy as np
 import tensorflow as tf
 
 import keras
+from keras.applications.xception import Xception
 from keras.preprocessing import image
 from keras.applications.vgg19 import (
     VGG19, 
@@ -14,20 +15,23 @@ from keras.applications.vgg19 import (
     decode_predictions
 )
 
+
+
 # Define default image size for VGG19
 
 
 def model():
     # Load the VGG19 model
     # https://keras.io/applications/#VGG19
-    model = VGG19(include_top=True, weights='imagenet')
-
+    # model = VGG19(include_top=True, weights='imagenet')
+    model=load_model("bestmodel.hdf5")
     return model
 
 
 def predict(image_path):
 
-    image_size = (224, 224)
+    #image_size = (224, 224)
+    image_size = (200,200)
     model = model()
 
     """Use VGG19 to label image"""
